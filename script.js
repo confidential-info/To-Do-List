@@ -79,11 +79,17 @@ function showList()
     }
 }
 
-//Function to SUBMIT an task and add to the list
+//Function to SUBMIT the task (if present) and add it to the list
 submit.addEventListener("click", function()
 {
-    tasks.push(input.value);
-    input.value = "";
-    listItem.innerHTML = "";
-    showList();
-});
+    let temp = input.value;
+    if(temp === "")
+        alert("Enter a value before submitting");
+    else
+    {
+        tasks.push(temp);
+        input.value = "";
+        listItem.innerHTML = "";
+        showList(); 
+    }   
+}); 
